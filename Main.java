@@ -7,7 +7,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.mayo.registry.fhir.util.PropertyHandler;
+import edu.util.PropertyHandler;
 
 public class Main {
 	
