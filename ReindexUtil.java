@@ -1,5 +1,3 @@
-package edu.mayo.registry.fhir.format;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -36,9 +34,9 @@ import org.springframework.http.ResponseEntity;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import edu.mayo.registry.fhir.util.HttpMethodExecutor;
-import edu.mayo.registry.fhir.util.entity.GenericHbaseEntity;
-import edu.mayo.registry.fhir.util.exception.UtilException;
+import edu.util.HttpMethodExecutor;
+import edu.util.entity.GenericHbaseEntity;
+import edu.util.exception.UtilException;
 
 @PropertySource(value="classpath:application.properties")
 public class ReindexUtil {
@@ -71,7 +69,7 @@ public class ReindexUtil {
 	private static final byte[] PROFILE_QUALIFIER = Bytes.toBytes("profile");
 	private static final byte[] RESOURCE_QUALIFIER = Bytes.toBytes("resource");
 	
-	private static final String convertsionEndpointUrl = "http://rof0000959:9024/registry-format-conv/Format_Conversion";
+	private static final String convertsionEndpointUrl = "http://xxxxx:1234/registry-format-conv/Format_Conversion";
 
 	/**
 	 * Process the reindexing for the given resource name
@@ -96,7 +94,6 @@ public class ReindexUtil {
 			httpMethodExecutor  = new HttpMethodExecutor(elasticSearchClusterUsername, elasticSearchClusterPassword);
 			webServiceUrl = getResourceUri(resourceName);
 			response = httpMethodExecutor.executePut(webServiceUrl, null, null, null, mapping); //executePost
-
         	// if the index is created successfully
 			 if (response.getStatusCode().equals(HttpStatus.CREATED) || response.getStatusCode().equals(HttpStatus.OK))
 		     {
