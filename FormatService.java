@@ -1,4 +1,4 @@
-package edu.mayo.registry.fhir.format;
+package edu.format;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -29,16 +29,16 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import edu.mayo.registry.fhir.local.LocalMeta;
-import edu.mayo.registry.fhir.local.LocalResource;
-import edu.mayo.registry.fhir.local.LocalResourceReference;
-import edu.mayo.registry.fhir.local.LocalValueString;
-import edu.mayo.registry.fhir.localformat.LocalMetaJsonDeserializer;
-import edu.mayo.registry.fhir.localformat.LocalMetaJsonSerializer;
-import edu.mayo.registry.fhir.localformat.LocalResourceReferenceJsonSerializer;
-import edu.mayo.registry.fhir.localformat.LocalValueStringJsonSerializer;
-import edu.mayo.registry.fhir.util.CommonUtilities;
-import edu.mayo.registry.fhir.util.exception.UtilException;
+import edu.local.LocalMeta;
+import edu.local.LocalResource;
+import edu.local.LocalResourceReference;
+import edu.local.LocalValueString;
+import edu.localformat.LocalMetaJsonDeserializer;
+import edu.localformat.LocalMetaJsonSerializer;
+import edu.localformat.LocalResourceReferenceJsonSerializer;
+import edu.localformat.LocalValueStringJsonSerializer;
+import edu.util.CommonUtilities;
+import edu.util.exception.UtilException;
 
 @Service
 public class FormatService {
@@ -47,7 +47,7 @@ public class FormatService {
     static final String FORMAT_JSON = "json";
     static final String FORMAT_UNKNOWN = "unknown";
     static final String RESOURCE_UNKNOWN = "Unknown";
-    static final String PACKAGE = "edu.mayo.registry.fhir.local.";
+    static final String PACKAGE = "edu.local.";
 	final static String XML_RESOURCE_TYPE_REGEX = "^\\s*<(\\w+)";
 	final static Pattern xmlResourceTypePattern = Pattern.compile(XML_RESOURCE_TYPE_REGEX);
         
