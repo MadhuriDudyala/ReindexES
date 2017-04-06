@@ -1,4 +1,4 @@
-package edu.mayo.registry.fhir.util.config;
+package edu.util.config;
 
 import java.io.IOException;
 
